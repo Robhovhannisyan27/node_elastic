@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+</head>
+<body>
+	<ul>
+		<% users.forEach(function(drink) { %>
+        	<li><%= drink.firstName %> - <%= drink.lastName %></li>
+    	<% }); %>
+	</ul>
+	<a href="<%= paginate.href(true) %>">Prev</a>
+
+	<% for(var i = 0; i < pages.length;i++) { %>
+		<% var page = pages[i]; %>
+		<a href="<%= page.url %>" class="<%= paginate.page == page.number ? 'active' : ''%>"><%= page.number %></a>
+	<% } %>
+
+	<a href="<%= paginate.href() %>">Next</a>
+</body>
+</html>
